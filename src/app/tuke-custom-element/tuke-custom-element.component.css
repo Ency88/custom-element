@@ -1,0 +1,34 @@
+.item {
+  width: 100%;
+  background: #01A688;
+  height: 100px;
+  border-radius: 40px;
+  margin: 50px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item button {
+  height: 35px;
+  min-width: 135px;
+  background: linear-gradient(#FFCE00, #FFBA00);
+  border: 2px solid #FFA700;
+  border-radius: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #FFFFFF;
+  margin: 5px;
+  font-weight: bold;
+}
+
+.item div {
+  margin: 15px 0 0 0;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.item button:active {
+  background: #FFA700;
+}

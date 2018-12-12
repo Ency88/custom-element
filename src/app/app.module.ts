@@ -1,16 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import {Injector, NgModule} from '@angular/core';
+import { TukeCustomElementComponent } from './tuke-custom-element/tuke-custom-element.component';
+import {createCustomElement} from '@angular/elements';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [TukeCustomElementComponent],
   imports: [
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  entryComponents: [TukeCustomElementComponent],
+  providers: []
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector) {}
+
+  ngDoBootstrap() {
+    const element = createCustomElement(TukeCustomElementComponent, {injector: this.injector});
+    customElements.define('tp-custom-element', element);
+  }
+}
